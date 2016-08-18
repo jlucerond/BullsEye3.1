@@ -36,9 +36,9 @@ class ViewController: UIViewController {
         
     }
 
+    @IBAction func sliderMoved(sender: UISlider) {
+        
+        print("the value of the slider is now: \(sender.value)")
+    }
 
 }
-
-
-
-// quick test
