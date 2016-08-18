@@ -19,6 +19,22 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func buttonPressed () {
+        
+        let alert = UIAlertController (title: "top line",
+                                       message: "underneath",
+                                       preferredStyle: .Alert)
+        
+        let action = UIAlertAction (title: "click here",
+                                    style: .Default,
+                                    handler: nil)
+        
+        alert.addAction(action)
+        
+        presentViewController(alert, animated: true, completion: nil)
+        
+    }
 
 
 }
