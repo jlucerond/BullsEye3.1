@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var currentValue: Int = 50
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,7 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed () {
         
         let alert = UIAlertController (title: "top line",
-                                       message: "underneath",
+                                       message: "you got: \(currentValue)",
                                        preferredStyle: .Alert)
         
         let action = UIAlertAction (title: "click here",
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
 
     @IBAction func sliderMoved(sender: UISlider) {
         
+        currentValue = lroundf(sender.value)
         print("the value of the slider is now: \(sender.value)")
     }
 
