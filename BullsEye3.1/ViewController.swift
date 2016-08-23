@@ -6,6 +6,8 @@
 //  Copyright © 2016 Joe Lucero. All rights reserved.
 //
 
+// completed digital pages 63-85
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -13,27 +15,56 @@ class ViewController: UIViewController {
     // variables
     var currentValue: Int = 0
     var targetValue: Int = 0
+    var totalScore: Int = 0
+    var roundNumber: Int = 0
+    var difference: Int = 0
     
     // outlets
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
     
     //functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        currentValue = lroundf(slider.value)
-        targetValue = Int(arc4random_uniform(100)) + 1
+        startNewRound()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //custom functions
+    func startNewRound () {
+        roundNumber += 1
+        if roundNumber > 1 {
+            totalScore += (100-difference)
+        }
+        currentValue = 50
+        slider.value = Float(currentValue)
+        targetValue = Int(arc4random_uniform(100)) + 1
+        updateLabels()
+    }
+    func updateLabels () {
+        targetLabel.text = "\(targetValue)"
+        scoreLabel.text = "\(totalScore)"
+        roundLabel.text = "\(roundNumber)"
+    }
+    func calculateDifference () {
+        difference = currentValue - targetValue
+        if difference < 0 {
+            difference = -difference
+        }
+    }
+    
     //IBActions
     @IBAction func buttonPressed () {
         
-        let message = "The target was: \(targetValue)" + "\nThe value of the slider is: \(currentValue)"
+        calculateDifference()
+        
+        let message = "The target was: \(targetValue)" + "\nThe value of the slider is: \(currentValue)" + "\n You scored: \(100 - difference)"
         
         let alert = UIAlertController (title: "Hello, World",
                                        message: message,
@@ -46,6 +77,8 @@ class ViewController: UIViewController {
         alert.addAction(action)
         
         presentViewController(alert, animated: true, completion: nil)
+        
+        startNewRound()
         
     }
     @IBAction func sliderMoved(sender: UISlider) {
