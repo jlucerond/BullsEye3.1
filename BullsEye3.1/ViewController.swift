@@ -6,7 +6,7 @@
 //  Copyright © 2016 Joe Lucero. All rights reserved.
 //
 
-// completed digital pages 63-85
+// digital pages 86-96
 
 import UIKit
 
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     func startNewRound () {
         roundNumber += 1
         if roundNumber > 1 {
-            totalScore += (100-difference)
+            totalScore += calculateScoreForThisRound()
         }
         currentValue = 50
         slider.value = Float(currentValue)
@@ -58,27 +58,46 @@ class ViewController: UIViewController {
             difference = -difference
         }
     }
+    func calculateScoreForThisRound () -> Int {
+        if difference == 0 {
+            return 200
+        }
+        else if difference <= 5 {
+            return (150 - difference)
+        }
+        
+        else {return 100 - difference
+        }
+    }
     
     //IBActions
     @IBAction func buttonPressed () {
         
         calculateDifference()
         
-        let message = "The target was: \(targetValue)" + "\nThe value of the slider is: \(currentValue)" + "\n You scored: \(100 - difference)"
+        var title = ""
         
-        let alert = UIAlertController (title: "Hello, World",
+        if difference == 0 {title = "Perfect 💯!"}
+        else if difference <= 5 {title = "Nice 👍🏽"}
+        else if difference <= 10 {title = "Not Bad 😬"}
+        else {title = "Needs Work... 😶"}
+        
+        let message = "The target was: \(targetValue)" + "\nThe value of the slider is: \(currentValue)" + "\n You scored: \(calculateScoreForThisRound())"
+
+        
+        let alert = UIAlertController (title: title,
                                        message: message,
                                        preferredStyle: .Alert)
         
-        let action = UIAlertAction (title: "click here",
+        let action = UIAlertAction (title: "Play Again",
                                     style: .Default,
-                                    handler: nil)
+                                    handler: { action in
+                                        self.startNewRound()
+                                    })
         
         alert.addAction(action)
         
         presentViewController(alert, animated: true, completion: nil)
-        
-        startNewRound()
         
     }
     @IBAction func sliderMoved(sender: UISlider) {
@@ -86,5 +105,12 @@ class ViewController: UIViewController {
         currentValue = lroundf(sender.value)
         print("the value of the slider is now: \(sender.value)")
     }
+    @IBAction func startOver () {
+        totalScore = 0
+        roundNumber = 0
+        difference = 0
+        startNewRound()
+    }
+    
 
 }
