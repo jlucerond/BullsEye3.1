@@ -6,7 +6,7 @@
 //  Copyright © 2016 Joe Lucero. All rights reserved.
 //
 
-// digital pages 86-96
+// digital pages 96-106
 
 import UIKit
 
@@ -112,5 +112,4 @@ class ViewController: UIViewController {
         startNewRound()
     }
     
-
 }
