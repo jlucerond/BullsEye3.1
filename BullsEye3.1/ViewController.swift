@@ -75,8 +75,6 @@ class ViewController: UIViewController {
         
         calculateDifference()
         
-        let message = "The target was: \(targetValue)" + "\nThe value of the slider is: \(currentValue)" + "\n You scored: \(100 - difference)"
-        
         var title = ""
         
         if difference == 0 {title = "Perfect 💯!"}
@@ -84,19 +82,22 @@ class ViewController: UIViewController {
         else if difference <= 10 {title = "Not Bad 😬"}
         else {title = "Needs Work... 😶"}
         
+        let message = "The target was: \(targetValue)" + "\nThe value of the slider is: \(currentValue)" + "\n You scored: \(calculateScoreForThisRound())"
+
+        
         let alert = UIAlertController (title: title,
                                        message: message,
                                        preferredStyle: .Alert)
         
         let action = UIAlertAction (title: "Play Again",
                                     style: .Default,
-                                    handler: nil)
+                                    handler: { action in
+                                        self.startNewRound()
+                                    })
         
         alert.addAction(action)
         
         presentViewController(alert, animated: true, completion: nil)
-        
-        startNewRound()
         
     }
     @IBAction func sliderMoved(sender: UISlider) {
@@ -104,5 +105,12 @@ class ViewController: UIViewController {
         currentValue = lroundf(sender.value)
         print("the value of the slider is now: \(sender.value)")
     }
+    @IBAction func startOver () {
+        totalScore = 0
+        roundNumber = 0
+        difference = 0
+        startNewRound()
+    }
+    
 
 }
