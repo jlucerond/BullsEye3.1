@@ -6,7 +6,7 @@
 //  Copyright © 2016 Joe Lucero. All rights reserved.
 //
 
-// digital pages 96-106
+// digital pages 106-125
 
 import UIKit
 
@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         startNewRound()
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
