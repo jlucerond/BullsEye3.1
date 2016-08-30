@@ -11,9 +11,10 @@
 		D82C08FC1D66618B00FA72EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C08FB1D66618B00FA72EE /* ViewController.swift */; };
 		D82C08FF1D66618B00FA72EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D82C08FD1D66618B00FA72EE /* Main.storyboard */; };
 		D82C09011D66618B00FA72EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D82C09001D66618B00FA72EE /* Assets.xcassets */; };
-		D82C09041D66618B00FA72EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D82C09021D66618B00FA72EE /* LaunchScreen.storyboard */; };
 		D82C090E1D6E2C7700FA72EE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C090D1D6E2C7700FA72EE /* AboutViewController.swift */; };
 		D861E9DF1D70CFFB00B9160E /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = D861E9DE1D70CFFB00B9160E /* BullsEye.html */; };
+		D8E55A071D763FEA001BA5FE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E55A051D763FEA001BA5FE /* Default-568h@2x.png */; };
+		D8E55A081D763FEA001BA5FE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E55A061D763FEA001BA5FE /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +23,11 @@
 		D82C08FB1D66618B00FA72EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D82C08FE1D66618B00FA72EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D82C09001D66618B00FA72EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D82C09031D66618B00FA72EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D82C09051D66618B00FA72EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D82C090D1D6E2C7700FA72EE /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D861E9DE1D70CFFB00B9160E /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = BullsEye.html; path = "../../../Books/The iOS Apprentice 1 - Getting Started/Resources/BullsEye.html"; sourceTree = "<group>"; };
+		D8E55A051D763FEA001BA5FE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../../Books/The iOS Apprentice 1 - Getting Started/Resources/Launch Images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		D8E55A061D763FEA001BA5FE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../../../Books/The iOS Apprentice 1 - Getting Started/Resources/Launch Images/Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,14 @@
 		D82C08F81D66618B00FA72EE /* BullsEye3.1 */ = {
 			isa = PBXGroup;
 			children = (
+				D8E55A051D763FEA001BA5FE /* Default-568h@2x.png */,
+				D8E55A061D763FEA001BA5FE /* Default@2x.png */,
 				D861E9DE1D70CFFB00B9160E /* BullsEye.html */,
 				D82C08F91D66618B00FA72EE /* AppDelegate.swift */,
 				D82C08FB1D66618B00FA72EE /* ViewController.swift */,
 				D82C090D1D6E2C7700FA72EE /* AboutViewController.swift */,
 				D82C08FD1D66618B00FA72EE /* Main.storyboard */,
 				D82C09001D66618B00FA72EE /* Assets.xcassets */,
-				D82C09021D66618B00FA72EE /* LaunchScreen.storyboard */,
 				D82C09051D66618B00FA72EE /* Info.plist */,
 			);
 			path = BullsEye3.1;
@@ -128,8 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D82C09041D66618B00FA72EE /* LaunchScreen.storyboard in Resources */,
 				D861E9DF1D70CFFB00B9160E /* BullsEye.html in Resources */,
+				D8E55A071D763FEA001BA5FE /* Default-568h@2x.png in Resources */,
+				D8E55A081D763FEA001BA5FE /* Default@2x.png in Resources */,
 				D82C09011D66618B00FA72EE /* Assets.xcassets in Resources */,
 				D82C08FF1D66618B00FA72EE /* Main.storyboard in Resources */,
 			);
@@ -157,14 +161,6 @@
 				D82C08FE1D66618B00FA72EE /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D82C09021D66618B00FA72EE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D82C09031D66618B00FA72EE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
